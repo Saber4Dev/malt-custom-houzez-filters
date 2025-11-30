@@ -3,7 +3,7 @@
  * Plugin Name: Malt Custom Filters
  * Plugin URI: https://malt.com
  * Description: Custom multi-level filtering system for Houzez theme. Replaces default search with Type de lieu, Architecture, Décoration, and Pièces & éléments filters.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Rana
  * Author URI: https://ranoyiart.com
  * Text Domain: malt-custom-filters

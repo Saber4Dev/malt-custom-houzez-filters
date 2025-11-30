@@ -62,44 +62,44 @@ class Malt_Render_Shortcode {
                 </div>
                 
                 <!-- Second Row: Current Filters -->
-                <div class="malt-filters-row malt-filters-row-bottom">
+                <div class="rana-houzez-filter-bar malt-filters-row malt-filters-row-bottom">
                     
                     <!-- Filter 1: Type de lieu -->
                     <div class="malt-filter-item" data-filter="type_lieu">
+                        <label class="malt-filter-label"><?php _e('Type de lieu', 'malt-custom-filters'); ?></label>
                         <div class="malt-filter-trigger">
-                            <span class="malt-filter-label"><?php _e('Type de lieu', 'malt-custom-filters'); ?></span>
                             <span class="malt-filter-value"></span>
-                            <span class="malt-filter-arrow">▼</span>
+                            <span class="malt-filter-arrow"></span>
                         </div>
                         <input type="hidden" name="type_lieu" id="malt-type-lieu" value="" />
                     </div>
                     
                     <!-- Filter 2: Architecture -->
                     <div class="malt-filter-item" data-filter="architecture">
+                        <label class="malt-filter-label"><?php _e('Architecture', 'malt-custom-filters'); ?></label>
                         <div class="malt-filter-trigger">
-                            <span class="malt-filter-label"><?php _e('Architecture', 'malt-custom-filters'); ?></span>
                             <span class="malt-filter-value"></span>
-                            <span class="malt-filter-arrow">▼</span>
+                            <span class="malt-filter-arrow"></span>
                         </div>
                         <input type="hidden" name="architecture" id="malt-architecture" value="" />
                     </div>
                     
                     <!-- Filter 3: Décoration -->
                     <div class="malt-filter-item" data-filter="decoration">
+                        <label class="malt-filter-label"><?php _e('Décoration', 'malt-custom-filters'); ?></label>
                         <div class="malt-filter-trigger">
-                            <span class="malt-filter-label"><?php _e('Décoration', 'malt-custom-filters'); ?></span>
                             <span class="malt-filter-value"></span>
-                            <span class="malt-filter-arrow">▼</span>
+                            <span class="malt-filter-arrow"></span>
                         </div>
                         <input type="hidden" name="decoration" id="malt-decoration" value="" />
                     </div>
                     
                     <!-- Filter 4: Pièces & éléments -->
                     <div class="malt-filter-item" data-filter="pieces">
+                        <label class="malt-filter-label"><?php _e('Pièces & éléments', 'malt-custom-filters'); ?></label>
                         <div class="malt-filter-trigger">
-                            <span class="malt-filter-label"><?php _e('Pièces & éléments', 'malt-custom-filters'); ?></span>
                             <span class="malt-filter-value"></span>
-                            <span class="malt-filter-arrow">▼</span>
+                            <span class="malt-filter-arrow"></span>
                         </div>
                         <input type="hidden" name="pieces" id="malt-pieces" value="" />
                     </div>

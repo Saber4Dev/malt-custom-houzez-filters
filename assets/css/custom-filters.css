@@ -1,0 +1,619 @@
+/**
+ * Malt Custom Filters - Stylesheet
+ * 
+ * Styles for the multi-level filtering interface
+ */
+
+/* ============================================
+   Main Wrapper
+   ============================================ */
+
+.malt-filters-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1000;
+}
+
+.malt-filters-form {
+    position: relative;
+}
+
+/* ============================================
+   Title
+   ============================================ */
+
+.malt-filters-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+/* ============================================
+   Filter Row
+   ============================================ */
+
+.malt-filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative;
+}
+
+.malt-filters-row-top {
+    margin-bottom: 20px;
+}
+
+.malt-filters-row-bottom {
+    margin-top: 0;
+}
+
+/* ============================================
+   Filter Items
+   ============================================ */
+
+.malt-filter-item {
+    flex: 1;
+    min-width: 180px;
+    position: relative;
+}
+
+.malt-filter-item.active .malt-filter-trigger {
+    border-color: #0073aa;
+    background: #f0f8ff;
+}
+
+.malt-filter-item.has-value .malt-filter-label {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.malt-filter-item.has-value .malt-filter-value {
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ============================================
+   Top Row Input Fields
+   ============================================ */
+
+.malt-filter-select,
+.malt-filter-text,
+.malt-filter-location {
+    display: flex;
+    flex-direction: column;
+}
+
+.malt-filter-select label,
+.malt-filter-text label,
+.malt-filter-location label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.malt-filter-example {
+    font-size: 11px;
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.malt-select-field,
+.malt-text-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.malt-select-field:focus,
+.malt-text-field:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.malt-select-field:hover {
+    border-color: #0073aa;
+}
+
+.malt-location-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.malt-pin-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 18px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.malt-location-field {
+    padding-left: 45px;
+}
+
+.malt-filter-trigger {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    justify-content: center;
+    position: relative;
+}
+
+.malt-filter-trigger:hover {
+    border-color: #0073aa;
+    background: #f9f9f9;
+}
+
+.malt-filter-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.malt-filter-value {
+    font-size: 14px;
+    color: #333;
+    display: none;
+}
+
+.malt-filter-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.malt-filter-item.active .malt-filter-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Submit Button */
+.malt-filter-submit {
+    flex: 0 0 auto;
+    min-width: 150px;
+}
+
+.malt-search-btn {
+    width: 100%;
+    height: 100%;
+    min-height: 50px;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.malt-search-btn:hover {
+    background: #005a87;
+}
+
+/* ============================================
+   Mega Panels Container
+   ============================================ */
+
+.malt-filters-panels {
+    position: relative;
+}
+
+.malt-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+    z-index: 1001;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.malt-panel.active {
+    display: block;
+}
+
+/* ============================================
+   Type de lieu Panel (Hierarchical)
+   ============================================ */
+
+.malt-panel-type-lieu {
+    padding: 20px;
+}
+
+.malt-level {
+    display: none;
+}
+
+.malt-level.active {
+    display: block;
+}
+
+.malt-level-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.malt-level-item {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+.malt-level-item:hover {
+    border-color: #0073aa;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.2);
+}
+
+.malt-item-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.malt-item-arrow {
+    color: #0073aa;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ============================================
+   Simple Dropdown Panels
+   ============================================ */
+
+.malt-panel-simple {
+    padding: 15px;
+    min-width: 250px;
+}
+
+.malt-simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.malt-simple-list .malt-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #333;
+}
+
+.malt-simple-list .malt-item:last-child {
+    border-bottom: none;
+}
+
+.malt-simple-list .malt-item:hover {
+    background: #f0f8ff;
+    padding-left: 20px;
+}
+
+/* ============================================
+   Pièces & Éléments Panel
+   ============================================ */
+
+.malt-panel-pieces {
+    padding: 30px;
+}
+
+.malt-pieces-section {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.malt-pieces-section:last-child {
+    margin-bottom: 0;
+}
+
+.malt-pieces-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+    background: #fff;
+}
+
+.malt-pieces-header:hover {
+    background: #f9f9f9;
+}
+
+.malt-pieces-header.expanded {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.malt-pieces-toggle {
+    user-select: none;
+}
+
+.malt-pieces-image-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+}
+
+.malt-pieces-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.malt-pieces-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    flex: 1;
+}
+
+.malt-pieces-expand-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.malt-pieces-expand-btn:hover {
+    background: #f0f0f0;
+}
+
+.malt-pieces-expand-btn.expanded .malt-pieces-arrow {
+    transform: rotate(180deg);
+}
+
+.malt-pieces-arrow {
+    font-size: 14px;
+    color: #666;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.malt-pieces-content {
+    padding: 20px;
+    background: #fafafa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.malt-pieces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.malt-pieces-item {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.malt-pieces-item:hover {
+    border-color: #0073aa;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.2);
+}
+
+.malt-pieces-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.malt-pieces-label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.malt-pieces-item[data-has-children="true"]::after {
+    content: '›';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0073aa;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Pièces Submenu */
+.malt-pieces-submenu {
+    background: #fff;
+    border: 2px solid #0073aa;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    min-width: 200px;
+    z-index: 1002;
+}
+
+.malt-pieces-subitem {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.malt-pieces-subitem:hover {
+    background: #f0f8ff;
+}
+
+.malt-pieces-subcheckbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .malt-filters-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .malt-filters-row {
+        flex-direction: column;
+    }
+    
+    .malt-filter-item {
+        min-width: 100%;
+    }
+    
+    .malt-filter-select,
+    .malt-filter-text,
+    .malt-filter-location {
+        min-width: 100%;
+    }
+    
+    .malt-filter-submit {
+        min-width: 100%;
+    }
+    
+    .malt-level-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .malt-pieces-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .malt-panel {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .malt-pieces-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .malt-panel-pieces {
+        padding: 15px;
+    }
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+
+.malt-filter-item.loading .malt-filter-trigger {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.malt-filter-item.loading .malt-filter-trigger::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #0073aa;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
